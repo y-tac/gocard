@@ -1,0 +1,40 @@
+# ディレクトリ構造
+- front
+  - frontのモジュールを置く
+- handler
+  - handler
+    - 1つのUsecaseを呼び出す
+- Usecase
+  - プロシージャを定義する
+- domain
+  - Model:データ構造を登録
+  - Repositry:インフラ向けのインターフェース
+  - Service
+    - User
+    - Cards
+    - Tags
+- infra
+  - redis_driver
+  - front_module
+- modules
+  - tags
+    - tags.go
+     - tag管理定義をする
+   - common.go
+     - 共通機能の実装
+   - status.go
+     - 
+   - 外部定義tags
+     - init関数で依存性の定義
+     - 集計
+     - UIconfs
+     - param
+- registry:初期設定やtagモジュールを呼ぶ。
+   - ConfigDriver
+   - router/renderの設定
+   - redis_init
+   - module.init
+- gocard.go
+  - mainパッケージ。
+    - エントリポイント。レイヤとしてはHandlerの一部
+  - registryをCallしてサーバを起動する
