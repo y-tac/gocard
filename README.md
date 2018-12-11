@@ -1,6 +1,8 @@
 # ディレクトリ構造
 - front
   - frontのモジュールを置く
+  - 画面構成
+    - ユーザ管理画面
 - handler
   - handler
     - 1つのUsecaseを呼び出す
@@ -10,7 +12,7 @@
   - Model:データ構造を登録
   - Repositry:インフラ向けのインターフェース
   - Service
-    - User
+    - authenticate
     - Cards
     - Tags
 - infra
@@ -38,3 +40,40 @@
   - mainパッケージ。
     - エントリポイント。レイヤとしてはHandlerの一部
   - registryをCallしてサーバを起動する
+
+# configration
+---
+- gocard
+- server
+  - port
+  - ip
+- front
+  - path:フロントはここにリンクを貼る
+---
+------
+データ構造
+models:
+- Server
+  - authorities[]
+    - passwd
+    - OAuth()
+  - signup:
+    - disable:無効
+    - free :自由
+    - apply:managerの許可が必要
+- User
+- Card
+  - Tags:[]
+  - Label
+  - Date
+- Tag:
+  - type:
+  - label:
+  - taginfo:[]
+- Date:
+  - todate:date
+  - fromdate:date
+- History
+  - Card
+  - updatedate
+------
